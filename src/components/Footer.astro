@@ -1,0 +1,29 @@
+---
+import { portfolioData } from '../data/portfolio';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="pt-8 pb-12 border-t border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
+  <p>© {currentYear} {portfolioData.name}. All rights reserved.</p>
+  <p class="flex items-center gap-1.5">
+    Built with
+    <a
+      href="https://astro.build"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-zinc-400 hover:text-zinc-200 transition-colors underline underline-offset-4"
+    >
+      Astro
+    </a>
+    &
+    <a
+      href="https://tailwindcss.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="text-zinc-400 hover:text-zinc-200 transition-colors underline underline-offset-4"
+    >
+      Tailwind CSS
+    </a>
+  </p>
+</footer>
