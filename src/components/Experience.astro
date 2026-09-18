@@ -4,36 +4,36 @@ import { portfolioData } from '../data/portfolio';
 
 <section id="experience" class="mb-16 scroll-mt-24">
   <div class="flex items-center justify-between mb-8">
-    <h2 class="text-2xl font-bold tracking-tight text-[#faf5e8] flex items-center gap-2">
-      <span class="text-[#86efac] font-mono text-base">02.</span> Work Experience
+    <h2 class="text-2xl font-bold tracking-tight text-[var(--text-primary)] flex items-center gap-2 transition-colors">
+      <span class="text-[var(--accent)] font-mono text-base">02.</span> Work Experience
     </h2>
-    <span class="text-xs text-[#8e8975] font-mono">
+    <span class="text-xs text-[var(--text-muted)] font-mono">
       6+ Years Experience
     </span>
   </div>
 
-  <div class="space-y-10 border-l border-[#1c3d2d]/80 ml-3 pl-6 relative">
+  <div class="space-y-10 border-l border-[var(--timeline-line)] ml-3 pl-6 relative transition-colors">
     {
       portfolioData.experience.map((exp) => (
         <div class="relative group">
-          <!-- Main timeline bullet: w-2.5 (10px), perfectly centered on border-l with pl-6 (24px) -->
-          <span class="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-[#163a2a] border-2 border-[#06140e] group-hover:bg-[#86efac] transition-colors" />
+          <!-- Main timeline bullet -->
+          <span class="absolute -left-[29px] top-1.5 h-2.5 w-2.5 rounded-full bg-[var(--timeline-bullet)] border-2 border-[var(--timeline-bullet-border)] group-hover:bg-[var(--accent)] transition-colors" />
 
           {/* If entry has grouped sub-roles (e.g. Thoughtworks) */}
           {exp.roles && exp.roles.length > 0 ? (
             <div>
               {/* Company Header */}
               <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-4">
-                <h3 class="text-lg font-bold text-[#faf5e8]">
+                <h3 class="text-lg font-bold text-[var(--text-primary)] transition-colors">
                   {exp.companyUrl ? (
                     <a
                       href={exp.companyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-[#faf5e8] hover:text-[#86efac] transition-colors inline-flex items-center gap-1.5 underline underline-offset-4 decoration-[#224835] hover:decoration-[#86efac]"
+                      class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1.5 underline underline-offset-4 decoration-[var(--border-card)] hover:decoration-[var(--accent)]"
                     >
                       {exp.company}
-                      <svg class="w-3.5 h-3.5 text-[#8e8975]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg class="w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -41,48 +41,48 @@ import { portfolioData } from '../data/portfolio';
                     <span>{exp.company}</span>
                   )}
                 </h3>
-                <span class="text-xs font-mono text-[#8e8975] whitespace-nowrap">
+                <span class="text-xs font-mono text-[var(--text-muted)] whitespace-nowrap">
                   {exp.period}
                 </span>
               </div>
 
               {/* Nested Sub-roles Timeline */}
-              <div class="space-y-6 border-l border-[#183627]/70 ml-1.5 pl-4">
+              <div class="space-y-6 border-l border-[var(--timeline-subline)] ml-1.5 pl-4 transition-colors">
                 {exp.roles.map((role) => (
                   <div class="relative">
-                    <!-- Sub timeline bullet: w-1.5 (6px), perfectly centered on border-l with pl-4 (16px) -->
-                    <span class="absolute -left-[19px] top-2 h-1.5 w-1.5 rounded-full bg-[#244c38] group-hover:bg-[#86efac]/80 transition-colors" />
+                    <!-- Sub timeline bullet -->
+                    <span class="absolute -left-[19px] top-2 h-1.5 w-1.5 rounded-full bg-[var(--timeline-bullet)] group-hover:bg-[var(--accent)] transition-colors" />
 
                     <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
                       <div class="flex flex-wrap items-center gap-2">
-                        <h4 class="text-sm font-semibold text-[#faf5e8]">
+                        <h4 class="text-sm font-semibold text-[var(--text-primary)] transition-colors">
                           {role.role}
                         </h4>
                         {role.employmentType && (
-                          <span class={`text-[11px] font-mono px-2 py-0.5 rounded-md border ${
+                          <span class={`text-[11px] font-mono px-2 py-0.5 rounded-md border transition-colors ${
                             role.employmentType.includes('Full-time')
-                              ? 'bg-[#092c1c]/80 text-[#86efac] border-[#155936]/80'
-                              : 'bg-[#16271e]/80 text-[#ded7c5] border-[#2c4535]/80'
+                              ? 'bg-[var(--accent-bg)] text-[var(--accent)] border-[var(--accent-border)]'
+                              : 'bg-[var(--badge-bg)] text-[var(--badge-text)] border-[var(--badge-border)]'
                           }`}>
                             {role.employmentType}
                           </span>
                         )}
                       </div>
-                      <span class="text-xs font-mono text-[#8e8975] whitespace-nowrap">
+                      <span class="text-xs font-mono text-[var(--text-muted)] whitespace-nowrap">
                         {role.period}
                       </span>
                     </div>
 
                     {role.description && (
-                      <p class="text-sm text-[#ded7c5] leading-relaxed mb-2.5">
+                      <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-2.5 transition-colors">
                         {role.description}
                       </p>
                     )}
 
                     {role.highlights && role.highlights.length > 0 && (
-                      <ul class="space-y-1.5 text-xs text-[#c8c1ad] list-disc list-outside pl-4">
+                      <ul class="space-y-1.5 text-xs text-[var(--text-secondary)] list-disc list-outside pl-4 transition-colors">
                         {role.highlights.map((item) => (
-                          <li class="leading-relaxed marker:text-[#2d5740]">{item}</li>
+                          <li class="leading-relaxed marker:text-[var(--accent)]">{item}</li>
                         ))}
                       </ul>
                     )}
@@ -94,39 +94,39 @@ import { portfolioData } from '../data/portfolio';
             /* Standard single-role entry */
             <div>
               <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1 mb-1.5">
-                <h3 class="text-base font-semibold text-[#faf5e8]">
-                  {exp.role} <span class="text-[#8e8975] font-normal">at</span>{' '}
+                <h3 class="text-base font-semibold text-[var(--text-primary)] transition-colors">
+                  {exp.role} <span class="text-[var(--text-muted)] font-normal">at</span>{' '}
                   {exp.companyUrl ? (
                     <a
                       href={exp.companyUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      class="text-[#faf5e8] hover:text-[#86efac] transition-colors inline-flex items-center gap-1 underline underline-offset-4 decoration-[#224835] hover:decoration-[#86efac]"
+                      class="text-[var(--text-primary)] hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1 underline underline-offset-4 decoration-[var(--border-card)] hover:decoration-[var(--accent)]"
                     >
                       {exp.company}
-                      <svg class="w-3 h-3 text-[#8e8975]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <svg class="w-3 h-3 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
                   ) : (
-                    <span class="text-[#ded7c5]">{exp.company}</span>
+                    <span class="text-[var(--text-secondary)]">{exp.company}</span>
                   )}
                 </h3>
-                <span class="text-xs font-mono text-[#8e8975] whitespace-nowrap">
+                <span class="text-xs font-mono text-[var(--text-muted)] whitespace-nowrap">
                   {exp.period}
                 </span>
               </div>
 
               {exp.description && (
-                <p class="text-sm text-[#ded7c5] leading-relaxed mb-3">
+                <p class="text-sm text-[var(--text-secondary)] leading-relaxed mb-3 transition-colors">
                   {exp.description}
                 </p>
               )}
 
               {exp.highlights && exp.highlights.length > 0 && (
-                <ul class="space-y-2 text-xs text-[#c8c1ad] list-disc list-outside pl-4">
+                <ul class="space-y-2 text-xs text-[var(--text-secondary)] list-disc list-outside pl-4 transition-colors">
                   {exp.highlights.map((item) => (
-                    <li class="leading-relaxed marker:text-[#2d5740]">{item}</li>
+                    <li class="leading-relaxed marker:text-[var(--accent)]">{item}</li>
                   ))}
                 </ul>
               )}

@@ -4,21 +4,21 @@ import { portfolioData } from '../data/portfolio';
 
 <section id="skills" class="mb-16 scroll-mt-24">
   <div class="flex items-center justify-between mb-8">
-    <h2 class="text-2xl font-bold tracking-tight text-[#faf5e8] flex items-center gap-2">
-      <span class="text-[#86efac] font-mono text-base">03.</span> Skills & Technologies
+    <h2 class="text-2xl font-bold tracking-tight text-[var(--text-primary)] flex items-center gap-2 transition-colors">
+      <span class="text-[var(--accent)] font-mono text-base">03.</span> Skills & Technologies
     </h2>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
     {
       portfolioData.skills.map((skillGroup) => (
-        <div class="p-5 rounded-2xl bg-[#0d2218]/65 border border-[#1b3d2c]/80 flex flex-col justify-between hover:border-[#356a50] transition-colors">
-          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-[#8e8975] mb-3">
+        <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] flex flex-col justify-between hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all">
+          <h3 class="text-xs font-mono font-semibold uppercase tracking-wider text-[var(--text-muted)] mb-3">
             {skillGroup.category}
           </h3>
           <div class="flex flex-wrap gap-1.5">
             {skillGroup.items.map((skill) => (
-              <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-[#132d20]/80 text-[#ded7c5] border border-[#224835] hover:border-[#3d7a60] hover:text-[#faf5e8] transition-colors">
+              <span class="px-2.5 py-1 rounded-lg text-xs font-medium bg-[var(--tag-bg)] text-[var(--tag-text)] border border-[var(--tag-border)] hover:border-[var(--border-card-hover)] hover:text-[var(--text-primary)] transition-colors">
                 {skill}
               </span>
             ))}

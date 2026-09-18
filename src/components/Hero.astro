@@ -4,8 +4,8 @@ import { portfolioData } from '../data/portfolio';
 
 <section id="about" class="mb-16 scroll-mt-24">
   <div class="space-y-5">
-    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[#0c2217] border border-[#1b3d2c] text-[#ded7c5]">
-      <svg class="w-3.5 h-3.5 text-[#86efac]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium bg-[var(--badge-bg)] border border-[var(--badge-border)] text-[var(--badge-text)] transition-colors">
+      <svg class="w-3.5 h-3.5 text-[var(--accent)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
       </svg>
@@ -13,15 +13,15 @@ import { portfolioData } from '../data/portfolio';
     </div>
 
     <div>
-      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[#faf5e8]">
-        Hi, I'm <span class="bg-gradient-to-r from-[#faf5e8] via-[#ede5d0] to-[#c7bfa9] bg-clip-text text-transparent">{portfolioData.name}</span>
+      <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-[var(--text-primary)] transition-colors">
+        Hi, I'm <span class="text-[var(--accent)]">{portfolioData.name}</span>
       </h1>
-      <p class="text-lg sm:text-2xl font-semibold text-[#86efac] mt-2">
+      <p class="text-lg sm:text-2xl font-semibold text-[var(--accent)] mt-2 transition-colors">
         {portfolioData.title}
       </p>
     </div>
 
-    <p class="text-base sm:text-lg text-[#ded7c5] leading-relaxed max-w-2xl">
+    <p class="text-base sm:text-lg text-[var(--text-secondary)] leading-relaxed max-w-2xl transition-colors">
       {portfolioData.about}
     </p>
 
@@ -30,7 +30,7 @@ import { portfolioData } from '../data/portfolio';
       <div class="flex flex-wrap items-center gap-2.5">
         <a
           href="#contact"
-          class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[#f5efe0] text-[#07170f] font-semibold text-sm hover:bg-[#fffcf4] hover:shadow-lg hover:shadow-emerald-950/40 transition-all duration-200"
+          class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[var(--btn-primary-bg)] text-[var(--btn-primary-text)] font-semibold text-sm hover:bg-[var(--btn-primary-hover)] hover:shadow-lg transition-all duration-200"
         >
           Get in touch
         </a>
@@ -38,16 +38,16 @@ import { portfolioData } from '../data/portfolio';
           href={portfolioData.resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-xl bg-[#0d2319] text-[#ded7c5] font-medium text-sm border border-[#1f4533] hover:bg-[#143325] hover:text-[#faf5e8] transition-all duration-200"
+          class="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-xl bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-text)] font-medium text-sm border border-[var(--btn-secondary-border)] hover:bg-[var(--btn-secondary-hover)] transition-all duration-200"
         >
-          <svg class="w-4 h-4 text-[#86efac] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg class="w-4 h-4 text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
           <span>Download Resume</span>
         </a>
         <a
           href="#projects"
-          class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[#091a13]/70 text-[#c5bfae] font-medium text-sm border border-[#173829] hover:bg-[#122e21] hover:text-[#faf5e8] transition-all duration-200"
+          class="inline-flex items-center justify-center h-10 px-4 rounded-xl bg-[var(--btn-secondary-bg)] text-[var(--btn-secondary-text)] font-medium text-sm border border-[var(--btn-secondary-border)] hover:bg-[var(--btn-secondary-hover)] transition-all duration-200"
         >
           View Projects
         </a>
@@ -59,7 +59,7 @@ import { portfolioData } from '../data/portfolio';
             href={portfolioData.socials.linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[#0c2217]/90 text-[#c5bfae] hover:text-[#faf5e8] border border-[#1b3d2c] hover:bg-[#143325] transition-all"
+            class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[var(--btn-secondary-bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--btn-secondary-border)] hover:bg-[var(--btn-secondary-hover)] transition-all"
             aria-label="LinkedIn Profile"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -72,7 +72,7 @@ import { portfolioData } from '../data/portfolio';
             href={portfolioData.socials.github}
             target="_blank"
             rel="noopener noreferrer"
-            class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[#0c2217]/90 text-[#c5bfae] hover:text-[#faf5e8] border border-[#1b3d2c] hover:bg-[#143325] transition-all"
+            class="inline-flex items-center justify-center h-10 w-10 rounded-xl bg-[var(--btn-secondary-bg)] text-[var(--text-secondary)] hover:text-[var(--text-primary)] border border-[var(--btn-secondary-border)] hover:bg-[var(--btn-secondary-hover)] transition-all"
             aria-label="GitHub Profile"
           >
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">

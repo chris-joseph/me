@@ -4,7 +4,7 @@ import { portfolioData } from '../data/portfolio';
 const currentYear = new Date().getFullYear();
 ---
 
-<footer class="pt-8 pb-12 border-t border-[#14281e] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8e8975]">
+<footer class="pt-8 pb-12 border-t border-[var(--footer-border)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--text-muted)] transition-colors">
   <p>© {currentYear} {portfolioData.name}. All rights reserved.</p>
   <p class="flex items-center gap-1.5">
     Built with
@@ -12,7 +12,7 @@ const currentYear = new Date().getFullYear();
       href="https://astro.build"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-[#ded7c5] hover:text-[#faf5e8] transition-colors underline underline-offset-4 decoration-[#224835]"
+      class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors underline underline-offset-4 decoration-[var(--border-card)]"
     >
       Astro
     </a>
@@ -21,7 +21,7 @@ const currentYear = new Date().getFullYear();
       href="https://tailwindcss.com"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-[#ded7c5] hover:text-[#faf5e8] transition-colors underline underline-offset-4 decoration-[#224835]"
+      class="text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors underline underline-offset-4 decoration-[var(--border-card)]"
     >
       Tailwind CSS
     </a>

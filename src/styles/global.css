@@ -1,12 +1,141 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @layer base {
+  :root {
+    /* Bright (Cream Base) Theme */
+    --bg-page: #faf6ee;
+    --bg-grid: #ded4bd;
+    --bg-card: rgba(244, 237, 224, 0.85);
+    --bg-card-hover: rgba(238, 230, 214, 0.95);
+    --bg-card-lead-from: rgba(238, 230, 214, 0.9);
+    --bg-card-lead-to: rgba(246, 241, 230, 0.65);
+    --border-card: #ded2b8;
+    --border-card-hover: #1f5038;
+
+    --bg-nav: rgba(248, 243, 232, 0.9);
+    --border-nav: rgba(218, 207, 186, 0.9);
+    --nav-link: #625c4e;
+    --nav-link-hover: #071911;
+    --nav-link-hover-bg: rgba(20, 56, 39, 0.08);
+
+    --text-primary: #071911;
+    --text-secondary: #1e382b;
+    --text-muted: #5e6d63;
+    --text-meta: #6e7970;
+
+    --accent: #156641;
+    --accent-hover: #0d4b2e;
+    --accent-bg: rgba(21, 102, 65, 0.1);
+    --accent-border: rgba(21, 102, 65, 0.28);
+
+    --badge-bg: #ece2ce;
+    --badge-text: #133824;
+    --badge-border: #d4c5a3;
+
+    --tag-bg: #eae0cb;
+    --tag-text: #143b27;
+    --tag-border: #cfc1a1;
+
+    --btn-primary-bg: #071e14;
+    --btn-primary-text: #faf5e8;
+    --btn-primary-hover: #103322;
+
+    --btn-secondary-bg: #eae1cd;
+    --btn-secondary-text: #071e14;
+    --btn-secondary-border: #cfc09f;
+    --btn-secondary-hover: #dfd4be;
+
+    --timeline-line: #d6cab0;
+    --timeline-subline: #ded2b8;
+    --timeline-bullet: #b8a88c;
+    --timeline-bullet-border: #faf6ee;
+
+    --selection-bg: #176542;
+    --selection-text: #faf5e8;
+
+    --contact-glow: rgba(21, 102, 65, 0.12);
+    --contact-bg-from: rgba(243, 236, 222, 0.95);
+    --contact-bg-to: #e8deca;
+    --footer-border: #ded2b8;
+
+    --color-scheme: light;
+  }
+
+  .dark {
+    /* Dark (Forest Green Base) Theme */
+    --bg-page: #06140e;
+    --bg-grid: #112c20;
+    --bg-card: rgba(13, 34, 24, 0.65);
+    --bg-card-hover: rgba(16, 41, 30, 0.85);
+    --bg-card-lead-from: rgba(16, 40, 29, 0.8);
+    --bg-card-lead-to: rgba(12, 32, 22, 0.5);
+    --border-card: rgba(27, 61, 44, 0.8);
+    --border-card-hover: #356a50;
+
+    --bg-nav: rgba(11, 28, 20, 0.85);
+    --border-nav: rgba(27, 61, 44, 0.8);
+    --nav-link: #9e9885;
+    --nav-link-hover: #faf5e8;
+    --nav-link-hover-bg: rgba(20, 49, 35, 0.7);
+
+    --text-primary: #faf5e8;
+    --text-secondary: #ded7c5;
+    --text-muted: #8e8975;
+    --text-meta: #8e8975;
+
+    --accent: #86efac;
+    --accent-hover: #a7f3d0;
+    --accent-bg: rgba(12, 40, 27, 0.7);
+    --accent-border: rgba(29, 82, 55, 0.7);
+
+    --badge-bg: rgba(12, 34, 23, 0.8);
+    --badge-text: #ded7c5;
+    --badge-border: #1b3d2c;
+
+    --tag-bg: rgba(19, 45, 32, 0.8);
+    --tag-text: #ded7c5;
+    --tag-border: #224835;
+
+    --btn-primary-bg: #f5efe0;
+    --btn-primary-text: #07170f;
+    --btn-primary-hover: #fffcf4;
+
+    --btn-secondary-bg: #0d2319;
+    --btn-secondary-text: #ded7c5;
+    --btn-secondary-border: #1f4533;
+    --btn-secondary-hover: #143325;
+
+    --timeline-line: rgba(28, 61, 45, 0.8);
+    --timeline-subline: rgba(24, 54, 39, 0.7);
+    --timeline-bullet: #163a2a;
+    --timeline-bullet-border: #06140e;
+
+    --selection-bg: #1b4231;
+    --selection-text: #faf5e8;
+
+    --contact-glow: rgba(29, 77, 56, 0.3);
+    --contact-bg-from: rgba(14, 36, 27, 0.9);
+    --contact-bg-to: #07160f;
+    --footer-border: #14281e;
+
+    --color-scheme: dark;
+  }
+
   html {
     scroll-behavior: smooth;
+    color-scheme: var(--color-scheme);
+  }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-secondary);
+    transition: background-color 0.25s ease, color 0.25s ease;
   }
 
   ::selection {
-    background-color: #1b4231;
-    color: #faf5e8;
+    background-color: var(--selection-bg);
+    color: var(--selection-text);
   }
 }

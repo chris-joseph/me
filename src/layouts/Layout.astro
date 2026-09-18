@@ -13,11 +13,14 @@ const {
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta name="description" content={description} />
@@ -31,9 +34,27 @@ const {
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      const getInitialTheme = () => {
+        const storedTheme = typeof localStorage !== 'undefined' && localStorage.getItem('theme');
+        if (storedTheme) {
+          return storedTheme;
+        }
+        if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+          return 'light';
+        }
+        return 'dark';
+      };
+      const theme = getInitialTheme();
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+      } else {
+        document.documentElement.classList.remove('dark');
+      }
+    </script>
   </head>
-  <body class="bg-[#06140e] text-[#ded7c5] font-['Inter',sans-serif] antialiased selection:bg-[#1b4231] selection:text-[#faf5e8] min-h-screen">
-    <div class="fixed inset-0 -z-10 h-full w-full bg-[#06140e] bg-[radial-gradient(#112c20_1px,transparent_1px)] [background-size:18px_18px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_75%,transparent_100%)]"></div>
+  <body class="bg-[var(--bg-page)] text-[var(--text-secondary)] font-['Inter',sans-serif] antialiased min-h-screen transition-colors duration-300">
+    <div class="fixed inset-0 -z-10 h-full w-full bg-[var(--bg-page)] bg-[radial-gradient(var(--bg-grid)_1px,transparent_1px)] [background-size:18px_18px] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_75%,transparent_100%)] transition-colors duration-300 pointer-events-none"></div>
     <div class="max-w-3xl mx-auto px-6 py-8 md:py-16 flex flex-col min-h-screen">
       <slot />
     </div>
