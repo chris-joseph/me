@@ -31,6 +31,8 @@ export interface Education {
   degree: string;
   institution: string;
   period: string;
+  link?: string;
+  description?: string;
 }
 
 export interface PortfolioData {
@@ -60,7 +62,7 @@ export const portfolioData: PortfolioData = {
   title: "Senior / Lead Flutter Engineer",
   location: "Bengaluru, Karnataka",
   about:
-    "Senior & Lead Flutter Engineer with 6+ years of experience delivering high-performance, cross-platform mobile applications (iOS, Android, Web) across trading, banking, e-commerce, and Ed-Tech domains. Proven full-lifecycle ownership from architecture and complex UI engineering through performance optimization, product instrumentation, and client-facing technical leadership. Early adopter of AI-driven SDLC and Spec Driven Development.",
+    "Senior & Lead Flutter Engineer and Aspiring Product Manager with 6+ years of experience delivering high-performance, cross-platform mobile applications (iOS, Android, Web) across trading, banking, e-commerce, and Ed-Tech domains. Proven full-lifecycle ownership from architecture and complex UI engineering through performance optimization, product instrumentation, and client-facing technical leadership. Early adopter of AI-driven SDLC and Spec Driven Development.",
   resumeUrl: "/resume.pdf",
   socials: {
     github: "https://github.com/chris-joseph",
@@ -222,9 +224,17 @@ export const portfolioData: PortfolioData = {
   ],
   education: [
     {
+      degree: "Product Management Fellowship Program (Cohort 53)",
+      institution: "NextLeap",
+      period: "Cohort 53",
+      link: "https://nextleap.app/course/product-management-course",
+      description: "Aspiring Product Manager",
+    },
+    {
       degree: "Bachelor of Technology (BTech)",
       institution: "APJ Abdul Kalam Technical University, Kerala",
       period: "Jul 2015 — Jul 2019",
+      description: "Full-time Engineering Program",
     },
   ],
   languages: [
