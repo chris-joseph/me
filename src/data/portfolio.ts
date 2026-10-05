@@ -74,7 +74,7 @@ export const portfolioData: PortfolioData = {
   skills: [
     {
       category: "Languages & Frameworks",
-      items: ["Flutter", "Dart", "Kotlin", "Golang", "React.js"],
+      items: ["Flutter", "Dart", "Kotlin", "Golang"],
     },
     {
       category: "Mobile Architecture & Systems",
