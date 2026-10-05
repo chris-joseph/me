@@ -130,7 +130,7 @@ export const portfolioData: PortfolioData = {
     {
       title: "Enterprise Operations Portal",
       description:
-        "Enterprise modernization project at Thoughtworks Technologies India, delivering a high-reliability operations portal with Flutter Web for industrial workflows.",
+        "Internal operations portal built with Flutter Web for a prominent trading platform, streamlining customer support operations across user onboarding, identity verification, payment resolution, and ticket escalations.",
       tags: ["Flutter Web", "Thoughtworks", "Enterprise", "Architecture"],
       link: "https://www.thoughtworks.com/en-in",
       featured: false,
