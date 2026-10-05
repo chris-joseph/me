@@ -33,6 +33,7 @@ export interface Education {
   period: string;
   link?: string;
   description?: string;
+  type?: string;
 }
 
 export interface PortfolioData {
@@ -226,15 +227,17 @@ export const portfolioData: PortfolioData = {
     {
       degree: "Product Management Fellowship Program (Cohort 53)",
       institution: "NextLeap",
-      period: "Cohort 53",
+      period: "Sep 2026 — Jan 2027",
       link: "https://nextleap.app/course/product-management-course",
       description: "Aspiring Product Manager",
+      type: "Fellowship",
     },
     {
       degree: "Bachelor of Technology (BTech)",
       institution: "APJ Abdul Kalam Technical University, Kerala",
       period: "Jul 2015 — Jul 2019",
       description: "Full-time Engineering Program",
+      type: "Degree",
     },
   ],
   languages: [

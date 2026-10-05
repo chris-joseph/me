@@ -10,80 +10,75 @@ import { portfolioData } from '../data/portfolio';
   </div>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4 items-stretch">
-    <!-- Education Card -->
-    <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] flex flex-col justify-between hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all h-full">
-      <div>
-        <div class="flex items-center justify-between mb-4">
-          <span class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">Education & Programs</span>
-          <span class="text-xs font-mono text-[var(--text-muted)]">
-            {portfolioData.education.length} Programs
-          </span>
-        </div>
-
-        <div class="space-y-4">
-          {portfolioData.education.map((edu, idx) => (
-            <div class={idx > 0 ? "pt-4 border-t border-[var(--border-card)]" : ""}>
-              <div class="flex items-center justify-between mb-1.5">
-                <span class="text-xs font-mono text-[var(--tag-text)] bg-[var(--tag-bg)] px-2 py-0.5 rounded border border-[var(--tag-border)]">
-                  {edu.period}
-                </span>
-                {edu.description && (
-                  <span class="text-xs font-mono text-[var(--text-muted)]">
-                    {edu.description}
-                  </span>
-                )}
-              </div>
-              <h3 class="text-base font-semibold text-[var(--text-primary)] mb-1 transition-colors">
-                {edu.degree}
-              </h3>
-              <p class="text-sm text-[var(--text-secondary)] transition-colors">
-                {edu.link ? (
-                  <a
-                    href={edu.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1.5 underline underline-offset-4 decoration-[var(--border-card)] hover:decoration-[var(--accent)]"
-                  >
-                    {edu.institution}
-                    <svg class="w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                    </svg>
-                  </a>
-                ) : (
-                  <span>{edu.institution}</span>
-                )}
-              </p>
+    {
+      portfolioData.education.map((edu) => (
+        <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] flex flex-col justify-between hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all h-full">
+          <div>
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+                {edu.type || "Program"}
+              </span>
+              <span class="text-xs font-mono text-[var(--tag-text)] bg-[var(--tag-bg)] px-2 py-0.5 rounded border border-[var(--tag-border)]">
+                {edu.period}
+              </span>
             </div>
-          ))}
+            <h3 class="text-base font-semibold text-[var(--text-primary)] mb-1.5 transition-colors">
+              {edu.degree}
+            </h3>
+            <p class="text-sm text-[var(--text-secondary)] transition-colors">
+              {edu.link ? (
+                <a
+                  href={edu.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="hover:text-[var(--accent)] transition-colors inline-flex items-center gap-1.5 underline underline-offset-4 decoration-[var(--border-card)] hover:decoration-[var(--accent)]"
+                >
+                  {edu.institution}
+                  <svg class="w-3.5 h-3.5 text-[var(--text-muted)]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              ) : (
+                <span>{edu.institution}</span>
+              )}
+            </p>
+          </div>
+
+          {edu.description && (
+            <div class="pt-4 mt-4 border-t border-[var(--border-card)] flex items-center gap-2 text-xs text-[var(--text-muted)] font-mono transition-colors">
+              <svg class="w-4 h-4 text-[var(--accent)] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>{edu.description}</span>
+            </div>
+          )}
         </div>
-      </div>
-    </div>
+      ))
+    }
 
     <!-- Languages Card -->
-    <div class="p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] flex flex-col justify-between hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all h-full">
-      <div>
-        <div class="flex items-center justify-between mb-3">
-          <span class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">Communication</span>
-          <span class="text-xs font-mono text-[var(--text-muted)]">
-            {portfolioData.languages.length} Languages
-          </span>
-        </div>
-        <div class="space-y-2.5">
-          {
-            portfolioData.languages.map((lang) => {
-              const [name, proficiency] = lang.split(' (');
-              const cleanProficiency = proficiency ? proficiency.replace(')', '') : '';
-              return (
-                <div class="flex items-center justify-between text-sm py-0.5">
-                  <span class="text-[var(--text-primary)] font-medium transition-colors">{name}</span>
-                  <span class="text-xs font-mono text-[var(--tag-text)] bg-[var(--tag-bg)] px-2 py-0.5 rounded border border-[var(--tag-border)]">
-                    {cleanProficiency}
-                  </span>
-                </div>
-              );
-            })
-          }
-        </div>
+    <div class="md:col-span-2 p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all">
+      <div class="flex items-center justify-between mb-3.5">
+        <span class="text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">Communication</span>
+        <span class="text-xs font-mono text-[var(--text-muted)]">
+          {portfolioData.languages.length} Languages
+        </span>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        {
+          portfolioData.languages.map((lang) => {
+            const [name, proficiency] = lang.split(' (');
+            const cleanProficiency = proficiency ? proficiency.replace(')', '') : '';
+            return (
+              <div class="flex items-center justify-between p-2.5 rounded-xl bg-[var(--bg-card-hover)]/40 border border-[var(--border-card)]/60 text-sm">
+                <span class="text-[var(--text-primary)] font-medium transition-colors">{name}</span>
+                <span class="text-xs font-mono text-[var(--tag-text)] bg-[var(--tag-bg)] px-2 py-0.5 rounded border border-[var(--tag-border)]">
+                  {cleanProficiency}
+                </span>
+              </div>
+            );
+          })
+        }
       </div>
     </div>
   </div>
