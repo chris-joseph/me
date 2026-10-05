@@ -3,6 +3,7 @@ export interface Project {
   description: string;
   tags: string[];
   link?: string;
+  playStore?: string;
   github?: string;
   featured?: boolean;
 }
@@ -105,8 +106,9 @@ export const portfolioData: PortfolioData = {
     {
       title: "Tale",
       description: "Travel companion app.",
-      tags: ["Flutter", "Dart", "Offline-First", "Google Play", "Firebase"],
-      link: "https://play.google.com/store/apps/details?id=com.zanfort.tale&pcampaignid=web_share",
+      tags: ["Flutter", "Dart", "Web", "Offline-First", "Google Play", "Firebase"],
+      link: "https://tale.zanfort.com/",
+      playStore: "https://play.google.com/store/apps/details?id=com.zanfort.tale&pcampaignid=web_share",
       featured: true,
     },
     {
