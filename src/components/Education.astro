@@ -64,13 +64,13 @@ import { portfolioData } from '../data/portfolio';
           {portfolioData.languages.length} Languages
         </span>
       </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+      <div class="flex flex-wrap items-center gap-2.5">
         {
           portfolioData.languages.map((lang) => {
             const [name, proficiency] = lang.split(' (');
             const cleanProficiency = proficiency ? proficiency.replace(')', '') : '';
             return (
-              <div class="flex items-center justify-between p-2.5 rounded-xl bg-[var(--bg-card-hover)]/40 border border-[var(--border-card)]/60 text-sm">
+              <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-[var(--bg-card-hover)]/40 border border-[var(--border-card)]/70 text-sm">
                 <span class="text-[var(--text-primary)] font-medium transition-colors">{name}</span>
                 <span class="text-xs font-mono text-[var(--tag-text)] bg-[var(--tag-bg)] px-2 py-0.5 rounded border border-[var(--tag-border)]">
                   {cleanProficiency}
