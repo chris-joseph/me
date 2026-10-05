@@ -106,7 +106,7 @@ export const portfolioData: PortfolioData = {
     {
       title: "Tale",
       description: "Travel companion app.",
-      tags: ["Flutter", "Dart", "Golang", "Web", "Google Play", "AI-SDLC", "Self-hosted", "Firebase"],
+      tags: ["Flutter", "Dart", "Golang", "Mobile", "Web", "mWeb", "Google Play", "AI-SDLC", "Self-hosted"],
       link: "https://tale.zanfort.com/",
       playStore: "https://play.google.com/store/apps/details?id=com.zanfort.tale&pcampaignid=web_share",
       featured: true,
