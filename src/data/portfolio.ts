@@ -104,8 +104,7 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       title: "Tale",
-      description:
-        "A travel and itinerary planning companion application published on Google Play. Features offline-first architecture, adaptive layout system, real-time sync, and location intelligence.",
+      description: "Travel companion app.",
       tags: ["Flutter", "Dart", "Offline-First", "Google Play", "Firebase"],
       link: "https://play.google.com/store/apps/details?id=com.zanfort.tale&pcampaignid=web_share",
       featured: true,
