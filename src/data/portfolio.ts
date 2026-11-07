@@ -120,7 +120,8 @@ export const portfolioData: PortfolioData = {
   projects: [
     {
       title: "Tale",
-      description: "Travel companion app.",
+      description:
+        "Travel companion app that lets users plan travel together, assign packing lists to companions, and share travel itineraries publicly or privately.",
       tags: ["Flutter", "Dart", "Golang", "Mobile", "Web", "mWeb", "Google Play", "AI-SDLC", "Self-hosted"],
       link: "https://tale.zanfort.com/",
       playStore: "https://play.google.com/store/apps/details?id=com.zanfort.tale&pcampaignid=web_share",
@@ -265,8 +266,6 @@ export const portfolioData: PortfolioData = {
       period: "Sep 2026 — Jan 2027",
       link: "https://nextleap.app/course/product-management-course",
       type: "Fellowship",
-      description:
-        "Intensive hands-on product management fellowship covering product thinking, user research, wireframing, PRDs/specifications, and product-led growth; supplemented by practical BA execution at i-exceed (NPCI/NBBL BCB banking rails) and an AI RAG product prototype for Groww AMC.",
     },
     {
       degree: "Bachelor of Technology (BTech)",
