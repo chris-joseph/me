@@ -130,7 +130,7 @@ export const portfolioData: PortfolioData = {
     {
       title: "Groww AMC Mutual Funds RAG Assistant",
       description:
-        "Academic research prototype for a facts-only Retrieval-Augmented Generation (RAG) assistant for Groww Mutual Fund schemes (ELSS Tax Saver, Index, Multicap, Liquid, Banking & Financial Services). Answers factual questions with strict compliance guardrails (zero investment advice, zero PII, and single-source citations) using official regulatory disclosures (KIM/SID, factsheets, SEBI/AMFI guidelines).",
+        "Built as part of the NextLeap Product Management course, this academic research prototype is a facts-only Retrieval-Augmented Generation (RAG) assistant for Groww Mutual Fund schemes (ELSS Tax Saver, Index, Multicap, Liquid, Banking & Financial Services). Answers factual questions with strict compliance guardrails (zero investment advice, zero PII, and single-source citations) using official regulatory disclosures (KIM/SID, factsheets, SEBI/AMFI guidelines).",
       tags: ["GenAI / RAG", "Python", "Streamlit", "Guardrails", "Groww AMC", "Fintech", "Product Management"],
       github: "https://github.com/chris-joseph/elss_chatbot",
       featured: true,
