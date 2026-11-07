@@ -15,8 +15,8 @@ import { portfolioData } from '../data/portfolio';
   <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
     {
       portfolioData.projects.map((project, index) => {
-        // First project spans full width for a balanced 1 + 4 grid
-        const isLead = index === 0;
+        // When odd, first project spans full width for a balanced grid (e.g. 1 + 4); when even, cards form a balanced 2-column grid
+        const isLead = index === 0 && portfolioData.projects.length % 2 !== 0;
         return (
           <div
             class={`group relative flex flex-col justify-between p-5 rounded-2xl bg-[var(--bg-card)] border border-[var(--border-card)] hover:border-[var(--border-card-hover)] hover:bg-[var(--bg-card-hover)] transition-all duration-200 ${

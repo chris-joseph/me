@@ -77,6 +77,18 @@ export const portfolioData: PortfolioData = {
       items: ["Flutter", "Dart", "Kotlin", "Golang"],
     },
     {
+      category: "Product Management & Banking Systems",
+      items: [
+        "Functional Specifications (FSD)",
+        "NPCI / NBBL BCB",
+        "B2B Payments & Settlement",
+        "Requirements Engineering",
+        "RAG Architectures & Guardrails",
+        "Stakeholder Alignment",
+        "Product Thinking",
+      ],
+    },
+    {
       category: "Mobile Architecture & Systems",
       items: [
         "App Architecture",
@@ -115,6 +127,14 @@ export const portfolioData: PortfolioData = {
       featured: true,
     },
     {
+      title: "Groww AMC Mutual Funds RAG Assistant",
+      description:
+        "Academic research prototype for a facts-only Retrieval-Augmented Generation (RAG) assistant for Groww Mutual Fund schemes (ELSS Tax Saver, Index, Multicap, Liquid, Banking & Financial Services). Answers factual questions with strict compliance guardrails (zero investment advice, zero PII, and single-source citations) using official regulatory disclosures (KIM/SID, factsheets, SEBI/AMFI guidelines).",
+      tags: ["GenAI / RAG", "Python", "Streamlit", "Guardrails", "Groww AMC", "Fintech", "Product Management"],
+      github: "https://github.com/chris-joseph/elss_chatbot",
+      featured: true,
+    },
+    {
       title: "Tickertape",
       description:
         "Asset analysis and financial research platform. Built core iOS features in Flutter, contributed to early architecture, and implemented the Stock Screener and interactive financial charting components.",
@@ -148,6 +168,21 @@ export const portfolioData: PortfolioData = {
     },
   ],
   experience: [
+    {
+      role: "Business Analyst",
+      employmentType: "Internship",
+      company: "i-exceed Technology Solutions",
+      companyUrl: "https://www.i-exceed.com/",
+      period: "Oct 2026 — Present",
+      description:
+        "Engaging directly with a premier banking client to implement NPCI / NBBL Bharat Connect for Business (BCB), enabling businesses to create, present, and settle invoices and B2B payments on the interoperable NPCI network. Roles and deliverables directly supplement ongoing Product Management coursework at NextLeap.",
+      highlights: [
+        "Author comprehensive Functional Specification Documents (FSD) translating complex B2B payment workflows into clear, execution-ready engineering requirements.",
+        "Drive implementation conversations bridging bank stakeholders, core banking integration teams, and platform developers.",
+        "Refine end-to-end invoice lifecycle requirements (generation, acceptance/rejection, ERP push/pull, and multi-mode payment settlement), surfacing and resolving edge cases.",
+        "Cross-verify functional and operational feasibility across UI/UX designs and technical architecture to ensure compliant, low-friction digital execution.",
+      ],
+    },
     {
       role: "Lead Mobile Engineer",
       company: "KJBN Labs",
@@ -230,6 +265,8 @@ export const portfolioData: PortfolioData = {
       period: "Sep 2026 — Jan 2027",
       link: "https://nextleap.app/course/product-management-course",
       type: "Fellowship",
+      description:
+        "Intensive hands-on product management fellowship covering product thinking, user research, wireframing, PRDs/specifications, and product-led growth; supplemented by practical BA execution at i-exceed (NPCI/NBBL BCB banking rails) and an AI RAG product prototype for Groww AMC.",
     },
     {
       degree: "Bachelor of Technology (BTech)",
